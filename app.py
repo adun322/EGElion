@@ -69,3 +69,5 @@ def get_sub(subject: str, id_user: int):
 @app.get("/tasks/course/{id_user}")
 def get_course(id_user: int):
     return qtm.GetCourse(id_user)
+
+/////

@@ -1,0 +1,124 @@
+body {
+    font-family: Bitter;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F8F8;
+}
+
+.container {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.back-btn {
+    text-decoration: none;
+    font-size: 20px;
+    color: #333;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.streak {
+    font-size: 14px;
+    color: #888;
+}
+
+.progress {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.progress p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.block {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.block h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.action-btn {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.block.disabled {
+    opacity: 0.5;
+}
+
+.block.disabled .action-btn {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Styling for Boss Battle Block */
+.boss-battle {
+    background-color: rgb(198, 241, 198);
+    position: relative; /* Сделать блок родительским для абсолютного позиционирования */
+    padding-top: 20px; /* Чтобы текст не перекрывался изображением */
+}
+
+.boss-battle h2 {
+    color: black;
+}
+
+.boss-image {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    max-width: 90px; /* Задайте нужный размер изображения */
+    border-radius: 10px;
+}
+
+.boss-btn {
+    background-color: rgb(23, 129, 41);
+    margin-top: 0px;
+}
+
+.action-btn-boss {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    background-color: #61d47a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}

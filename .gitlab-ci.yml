@@ -1,0 +1,106 @@
+include:
+  - project: pipelines/pipelines
+    ref: master
+    file:
+      [
+        "build.yaml",
+        "deploy.yaml",
+        "rules.yaml"
+      ]
+
+.global-variables:
+  variables:
+    SSH_USER: $ENV_SSH_USER # < Group Project Variable. Don't forget to add it!
+    SSH_HOST: $ENV_SERVER_IP # < Group Project Variable. Don't forget to add it!
+    SSH_PRIVATE_KEY_BASE64: $ENV_PRIVATE_KEY_BASE64 # < Group Project Variable. Don't forget to add it!
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  extends:
+    - .build
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main"
+
+build_frontend:
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  stage: build
+  variables:
+    DOCKERFILE_PATH: front-end/Dockerfile
+    IMAGE_TAG: frontend
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$IMAGE_TAG
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
+    DOCKER_DRIVER: overlay2
+
+  before_script:
+    - for try in {1..10}; do sleep 0.5; docker info && break ; done
+    - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password-stdin
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:$IMAGE_TAG .
+    - docker push $CI_REGISTRY_IMAGE:$IMAGE_TAG
+
+deploy:
+  stage: deploy
+  extends:
+    - .docker_run
+    - .global-variables
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main"
+  variables:
+    DOCKER_ARGS: -d --restart=unless-stopped
+      -p 8000:8000
+      -e ENV=PROD
+
+.docker_run_frontend:
+  extends: .ssh
+  stage: deploy
+  variables:
+    DOCKER_ARGS: "-i"
+    RUN_ARGS: ""
+    DOCKERFILE_PATH: front-end/Dockerfile
+    IMAGE_TAG: frontend
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$IMAGE_TAG
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
+    DOCKER_DRIVER: overlay2
+    PRUNE_COMMAND: "docker system prune -f -a"
+    CONTAINER_NAME_SUFFIX: "frontend"
+  script:
+    - AUTH_COMMAND="echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password-stdin";
+    - if [[ "$CONTAINER_NAME_SUFFIX" == "" ]];
+      then CONTAINER_NAME=$CI_PROJECT_NAME;
+      else CONTAINER_NAME=$CI_PROJECT_NAME-$CONTAINER_NAME_SUFFIX ; fi
+    - ssh $SSH_ADDRESS "$AUTH_COMMAND"
+    - ssh $SSH_ADDRESS "docker pull $IMAGE_NAME"
+    - ssh $SSH_ADDRESS "docker stop $CONTAINER_NAME || true"
+    - ssh $SSH_ADDRESS "docker rm $CONTAINER_NAME || true"
+    - ssh $SSH_ADDRESS "
+      docker run -d
+      $DOCKER_ARGS
+      --log-driver local
+      --log-opt max-size=100m
+      --name=$CONTAINER_NAME
+      $IMAGE_NAME $RUN_ARGS"
+    - ssh $SSH_ADDRESS "$PRUNE_COMMAND"
+
+deploy_frontend:
+  stage: deploy
+  extends:
+    - .docker_run_frontend
+    - .global-variables
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main"
+  variables:
+    DOCKER_ARGS: -d --restart=unless-stopped
+      -p 80:80
+      -e ENV=PROD

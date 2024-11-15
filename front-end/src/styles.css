@@ -1,0 +1,181 @@
+bitter-<uniquifier> {
+  font-family: "Bitter", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+body {
+    font-family: Bitter;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F8F8;
+}
+.container {
+    padding: 20px;
+}
+.header {
+    padding-top: 20px;
+    display: flex;
+}
+
+.header h1 {
+    font-size: 24px;
+    text-align: left;
+}
+
+.header h3 {
+  position: absolute;
+  right: 0;
+}
+
+.block {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin-bottom: 0px;
+}
+.block h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.block p {
+    font-size: 14px;
+    color: #888;
+}
+.block button {
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Bitter;
+}
+.my-blocks {
+    display: flex;
+    justify-content: space-between;
+}
+.my-block {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 48%;
+    padding: 15px;
+    text-align: center;
+}
+.my-block h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.my-block p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.my-block .progress {
+    font-size: 12px;
+    color: rgb(204, 241, 204);
+}
+.nav-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+.nav-bar a {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+}
+
+button {
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Bitter;
+}
+
+button:hover {
+  background-color: white;
+  color:black;
+  outline: solid black;
+  outline-width: 1px;
+  border-color: gray;
+  border-radius: 10px;
+}
+
+/* Character section styling */
+.my-character {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.my-character .character-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.character-info h4 {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Progress bar styling */
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.progress-label {
+    font-size: 14px;
+    color: #333;
+}
+
+.progress-container {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 20px;
+}
+
+.progress-bar {
+    background-color: #4caf50;
+    height: 100%;
+    width: 0%; /* Set this dynamically as tasks are completed */
+    transition: width 0.3s ease-in-out;
+}
+
+.person {
+    display: block;
+    margin: center;
+    position: absolute;
+    margin-left: 25%;
+    margin-bottom: 100%;
+}
+
+.action-btn boss-btn {
+    background-color: aquamarine;
+}

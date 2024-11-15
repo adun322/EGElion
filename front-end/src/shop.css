@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Bitter;
+}
+
+bitter-<uniquifier> {
+  font-family: "Bitter", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+body {
+    font-family: Bitter;
+    margin: 0;
+    padding: 10px;
+    background-color: #F6F6F6;
+}
+
+
+/* Верхняя панель */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.header .menu {
+    display: flex;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.coins {
+    display: flex;
+    align-items: center;
+}
+
+.coin-icon {
+    font-size: 24px;
+}
+
+.coin-count {
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+/* Основное содержимое */
+.shop-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Персонаж */
+.character-container {
+    text-align: center;
+    width: 30%;
+}
+
+.character-image {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Товары магазина */
+.items-container {
+    width: 60%;
+}
+
+.item-category {
+    margin-bottom: 20px;
+}
+
+.item-category h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.item-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.item-image {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 10px;
+}
+
+.item-name {
+    font-size: 16px;
+    color: #333;
+}
+
+.item-price {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.buy-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #555;
+}

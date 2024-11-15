@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Тренировка</title>
+    <link rel="stylesheet" href="train_styles.css">
+</head>
+<body>
+
+<div class="container">
+    <header class="header">
+        <a href="#" class="back-btn">←</a>
+        <h1>Тренировка 🧘</h1>
+        <div class="streak">Дней подряд: 4 🏆</div>
+    </header>
+
+    <section class="progress">
+        <p>Пройдено 0 из 4</p>
+        <p>Не пропускайте тренировки, чтобы не сбить счётчик дней ;</p>
+    </section>
+
+    <div class="block">
+        <h2>Блок 1. Упрощение логических выражений </h2>
+        <p>Решайте уравнения из первой части ОГЭ и ЕГЭ</p>
+        <button class="action-btn">Начать</button>
+    </div>
+
+    <div class="block disabled">
+        <h2>Блок 2. Таблицы истинности</h2>
+        <p>Чтобы приступить к этому блоку, сначала пройдите все предыдущие разделы.</p>
+        <button class="action-btn">Закрыто</button>
+    </div>
+
+    <div class="block disabled">
+        <h2>Блок 3. Программирование на Python</h2>
+        <p>Чтобы приступить к этому блоку, сначала пройдите все предыдущие разделы.</p>
+        <button class="action-btn">Закрыто</button>
+    </div>
+
+    <!-- New Boss Battle Section -->
+    <div class="block boss-battle">
+        <h2>Битва с боссом (контрольная работа)</h2>
+        <p>Проверьте свои знания, сразившись с боссом!</p>
+        <img src="boss-py.jpg" alt="Boss Image" class="boss-image">
+        <button class="action-btn-boss">Закрыто</button>
+    </div>
+</div>
+
+<script>
+const startButton = document.querySelector('.block .action-btn');
+startButton.addEventListener('click', function() {
+    window.location.href = 'menu.html';
+});
+
+const bossButton = document.querySelector('.boss-btn');
+bossButton.addEventListener('click', function() {
+    window.location.href = 'boss-battle.html'; // Redirect to boss battle page
+});
+</script>
+</body>
+</html>

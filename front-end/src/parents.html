@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Статистика детей</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+            overflow-y: scroll;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .block {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .block h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .block p {
+            font-size: 14px;
+            margin: 0 0 10px 0;
+        }
+
+        .add-child {
+            background-color: #e0e0e0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .add-child h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .add-child input[type="text"] {
+            width: calc(100% - 20px); /* Исправлено для ограничения поля ввода */
+            padding: 10px;
+            margin-top: 10px; /* Нормализованный отступ сверху */
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .add-child button {
+            width: 100%;
+            padding: 10px;
+            background-color: #cccccc;
+            color: black; /* Изменён цвет текста кнопки */
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .add-child button:hover {
+            background-color: #bbbbbb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Статистика по детям</h1>
+
+    <!-- Список детей -->
+    <div id="children-list">
+        <!-- Статистика ребенка 1 -->
+        <div class="block">
+            <h2>Иван Иванов</h2>
+            <p>Пройдено задач: 12 из 15</p>
+        </div>
+
+        <!-- Статистика ребенка 2 -->
+        <div class="block">
+            <h2>Мария Петрова</h2>
+            <p>Пройдено задач: 8 из 10</p>
+        </div>
+    </div>
+
+    <!-- Добавление нового ребенка -->
+    <div class="add-child">
+        <h2>Добавить ребёнка</h2>
+        <input type="text" placeholder="Введите id ребёнка" id="childName">
+        <button onclick="addChild()">Добавить</button>
+    </div>
+</div>
+
+<script>
+    function addChild() {
+        const name = document.getElementById('childName').value;
+        if (name) {
+            // Создаем новый элемент для ребенка
+            const childBlock = document.createElement('div');
+            childBlock.classList.add('block');
+            
+            // Добавляем HTML структуру с именем ребенка и количеством пройденных задач
+            childBlock.innerHTML = `
+                <h2>${name}</h2>
+                <p>Пройдено задач: 0 из 0</p>
+            `;
+            
+            // Вставляем нового ребенка в список
+            document.getElementById('children-list').appendChild(childBlock);
+
+            // Очищаем поле ввода после добавления
+            document.getElementById('childName').value = '';
+        } else {
+            alert('Введите id ребёнка');
+        }
+    }
+</script>
+
+</body>
+</html>

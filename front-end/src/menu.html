@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Задачи</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="container">
+        <header margin-bottom="20px">
+            <h1>Уравнения 🏀</h1>
+        </header>
+
+        <section class="task-list">
+            <div class="task-card">
+                <div class="task-content">
+                    <h2>Линейные уравнения 1</h2>
+                      <p>null null</p>
+                    <button id = "btn1" class="solve-btn">Решить</button>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-content">
+                    <h2>Линейные уравнения 2</h2>
+                    <p>null-null</p>
+                    <button id = "btn2" class="solve-btn">Решить</button>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-content">
+                    <h2>Квадратные уравнения 1</h2>
+                    <p>null-null</p>
+                    <button сlass="solve-btn" id = "solve-quadratic-1" >Решить</button>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-content">
+                    <h2>Квадратные уравнения 2</h2>
+                    <p>null-null</p>
+                    <button id = "btn4" class="solve-btn disabled" disabled>Недоступно</button>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-content">
+                    <h2>Кубические уравнения 1</h2>
+                    <p>null-null</p>
+                    <button id = "btn5" class="solve-btn disabled" disabled>Недоступно</button>
+                </div>
+            </div>
+        </section>
+        <div class="back-to-main">
+            <img src="door_icon.png" alt="Значок двери" class="door-icon">
+        </div>
+    </div>
+    <script>
+    document.getElementById('solve-quadratic-1').addEventListener('click', function() {
+        window.location.href = 'task.html';
+    });
+    document.querySelector('.back-to-main').addEventListener('click', function() {
+        window.location.href = 'main_train.html';
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <!-- Верхняя панель -->
+    <header class="header">
+        <div class="menu">
+            <a href="main.html" class="back-btn">← В меню</a>
+            <h1>Магазин</h1>
+        </div>
+        <div class="coins">
+            <span class="coin-icon">💰</span> <span class="coin-count">1000</span>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <div class="shop-container">
+        <!-- Персонаж игрока -->
+        <div class="character-container">
+            <h2>Ваш персонаж</h2>
+            <img src="personag.jpg" alt="Персонаж" class="character-image">
+        </div>
+
+        <!-- Товары магазина -->
+        <div class="items-container">
+            <h2>Товары</h2>
+            
+            <!-- Категория одежды -->
+            <div class="item-category">
+                <h3>Одежда</h3>
+                <div class="item-card">
+                    <img src="mantle.png" alt="Mantle" class="item-image">
+                    <p class="item-name">Мантия</p>
+                    <p class="item-price">500 💰</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+                <div class="item-card">
+                    <img src="trousers.png" alt="Штаны" class="item-image">
+                    <p class="item-name">Брюки</p>
+                    <p class="item-price">700 💰</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>
+
+            <!-- Категория аксессуаров -->
+            <div class="item-category">
+                <h3>Аксессуары</h3>
+                <div class="item-card">
+                    <img src="hat.png" alt="Шляпа" class="item-image">
+                    <p class="item-name">Шляпа</p>
+                    <p class="item-price">300 💰</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+                <div class="item-card">
+                    <img src="glasses.png" alt="Очки" class="item-image">
+                    <p class="item-name">Очки</p>
+                    <p class="item-price">200 💰</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

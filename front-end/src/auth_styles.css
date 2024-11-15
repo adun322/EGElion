@@ -1,0 +1,133 @@
+bitter-<uniquifier> {
+  font-family: "Bitter", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+body {
+    font-family: Bitter;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F8F8;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Bitter;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Bitter;
+}
+
+.auth-form {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    font-family: Bitter;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    font-family: Bitter;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    font-family: Bitter;
+}
+
+.input-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Bitter;
+}
+
+/* Стилизация выпадающего списка */
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+        font-family: Bitter;
+}
+
+.custom-select select {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    appearance: none; /* Убираем стандартный вид */
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    font-family: Bitter;
+}
+
+.custom-select select:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    font-family: Bitter;
+}
+
+.custom-select select option {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Кнопка входа */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+}
+
+.role-selection {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.role-option {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.role-option:hover {
+    background-color: #e0e0e0;
+}

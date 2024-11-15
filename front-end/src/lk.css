@@ -1,0 +1,89 @@
+bitter-<uniquifier> {
+  font-family: "Bitter", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+body {
+    font-family: Bitter;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F8F8;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.user-info, .courses {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.user-info h2, .courses h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.info-block p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.course {
+    margin-bottom: 20px;
+}
+
+.course h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: #333;
+    height: 100%;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    transition: width 0.3s;
+}
+
+.motivation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.motivation img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 13px;
+}

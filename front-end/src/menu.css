@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Bitter;
+}
+
+bitter-<uniquifier> {
+  font-family: "Bitter", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+body {
+    font-family: Bitter;
+    margin: 0;
+    padding: 10px;
+    background-color: #F6F6F6;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.task-list {
+    overflow: hidden;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+.task-card {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.task-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-content h2 {
+    font-size: 20px;
+    margin-bottom: 20px; /* Добавляем отступ снизу */
+    margin-top: 30px;    /* Увеличиваем отступ сверху */
+    color: #333;
+}
+
+
+.task-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background-color: #36c;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.solve-btn {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+
+.solve-btn:hover {
+    background-color: #555;
+}
+
+.solve-btn.disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.solve-btn:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.action-btn {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.action-btn solve-quadratic-1 {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.back-to-main {
+    position: absolute;
+    top: 20px;
+    right: 650px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+}
+
+.door-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 80px;
+}
+
+.back-to-main p {
+    font-size: 14px;
+    color: #007BFF;
+}

@@ -31,6 +31,7 @@ async def sticker1(user_id, ind):
     else:
         await bot.send_sticker(user_id, sticker="CAACAgIAAxkBAAEJIf9nCp3Ol36wSfcbjFAH4EMkNd8JTAACul4AAmitWUhJxAuAZ0486DYE")
 
+#
 # @router.message()
 # async def text(message: Message):
 #     user_id = message.from_user.id
